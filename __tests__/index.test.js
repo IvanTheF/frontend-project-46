@@ -16,3 +16,10 @@ test('comparing flat json-files', () => {
 
   expect(genDiff(firstPath, secondPath)).toEqual(getRightAnswer('rightAnswerJSON.txt'));
 });
+
+test('comparing flat yml-files', () => {
+  const firstPath = getFixturePath('file1.yml');
+  const secondPath = getFixturePath('file2.yml');
+
+  expect(genDiff(firstPath, secondPath)).toEqual(getRightAnswer('rightAnswerJSON.txt'));
+});

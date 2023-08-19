@@ -8,3 +8,7 @@ Demo comparing JSON files:
 
 <a href="https://asciinema.org/a/dOioQyw0wv6JkVIj6klwzJiuU" target="_blank"><img src="https://asciinema.org/a/dOioQyw0wv6JkVIj6klwzJiuU.svg" /></a>
 
+Demo comparing YML files:
+
+<a href="https://asciinema.org/a/lnkE2FjbnUv0lqfOt7kAT7OUl" target="_blank"><img src="https://asciinema.org/a/lnkE2FjbnUv0lqfOt7kAT7OUl.svg" /></a>
+

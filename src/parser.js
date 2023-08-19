@@ -1,5 +1,6 @@
-import path, { format } from 'path';
+import path from 'path';
 import fs from 'fs';
+import yaml from 'js-yaml';
 
 const getFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 const getFileData = (filepath) => fs.readFileSync(filepath, 'utf-8');
@@ -10,8 +11,14 @@ const parser = (filepath) => {
   const absPath = getFilePath(filepath);
   const fileData = getFileData(absPath);
 
-  if (fileType === 'json') {
-    return JSON.parse(fileData);
+  switch (fileType) {
+    case 'json':
+      return JSON.parse(fileData);
+    case 'yml':
+    case 'yaml':
+      return yaml.load(fileData);
+    default:
+      throw new Error('Unknown format');  
   }
 };
 
