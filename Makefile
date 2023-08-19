@@ -11,7 +11,7 @@ lint:
 	npx eslint .
 
 gendiff:
-	node bin/gendiff.js files/file1.json files/file2.json
+	node bin/gendiff.js __fixtures__/file1.json __fixtures__/file2.json
 
 test:
 	npx jest
