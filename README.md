@@ -1,6 +1,6 @@
 ### Badges:
 [![Actions Status](https://github.com/IvanTheF/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/IvanTheF/frontend-project-46/actions)
-[![Test and lint](https://github.com/IvanTheF/frontend-project-46/workflows/main.yml/badge.svg)](https://github.com/IvanTheF/frontend-project-46/actions)
+[![Test and lint](https://github.com/IvanTheF/frontend-project-46/workflows/main.yml/badge.svg)](https://github.com/IvanTheF/frontend-project-46/actions/workflows/main.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f6467a189b9a93adc5fb/maintainability)](https://codeclimate.com/github/IvanTheF/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f6467a189b9a93adc5fb/test_coverage)](https://codeclimate.com/github/IvanTheF/frontend-project-46/test_coverage)
 
