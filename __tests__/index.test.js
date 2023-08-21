@@ -14,12 +14,12 @@ test('comparing flat json-files', () => {
   const firstPath = getFixturePath('file1.json');
   const secondPath = getFixturePath('file2.json');
 
-  expect(genDiff(firstPath, secondPath)).toEqual(getRightAnswer('rightAnswerJSON.txt'));
+  expect(genDiff(firstPath, secondPath)).toEqual(getRightAnswer('rightAnswerStylish.txt'));
 });
 
 test('comparing flat yml-files', () => {
   const firstPath = getFixturePath('file1.yml');
   const secondPath = getFixturePath('file2.yml');
 
-  expect(genDiff(firstPath, secondPath)).toEqual(getRightAnswer('rightAnswerJSON.txt'));
+  expect(genDiff(firstPath, secondPath)).toEqual(getRightAnswer('rightAnswerStylish.txt'));
 });
