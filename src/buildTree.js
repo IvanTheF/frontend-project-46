@@ -8,7 +8,7 @@ const buildTree = (obj1, obj2) => {
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
       return { key, status: 'nested', children: buildTree(obj1[key], obj2[key]) };
     }
-    
+
     if (obj1[key] === obj2[key]) {
       return { key, status: 'unchanged', value: obj1[key] };
     }

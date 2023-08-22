@@ -7,7 +7,6 @@ const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const parsedData2 = parser(filepath2);
 
   return getStylish(buildTree(parsedData1, parsedData2), format);
-
 };
 
 export default genDiff;
