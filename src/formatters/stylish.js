@@ -13,21 +13,22 @@ const getString = (data, lvlNest) => {
 const getStylish = (arr) => {
   const iter = (data, lvlNest) => {
     const result = data.map((node) => {
+      const nextLvlNest = lvlNest + 1;
       switch (node.status) {
         case 'unchanged': {
-          return `${getSpace(lvlNest)}    ${node.key}: ${getString(node.value, lvlNest + 1)}`;
+          return `${getSpace(lvlNest)}    ${node.key}: ${getString(node.value, nextLvlNest)}`;
         }
         case 'changed': {
-          return `${getSpace(lvlNest)}  - ${node.key}: ${getString(node.newValue, lvlNest + 1)}\n${getSpace(lvlNest)}  + ${node.key}: ${getString(node.oldValue, lvlNest + 1)}`;
+          return `${getSpace(lvlNest)}  - ${node.key}: ${getString(node.newValue, nextLvlNest)}\n${getSpace(lvlNest)}  + ${node.key}: ${getString(node.oldValue, nextLvlNest)}`;
         }
         case 'added': {
-          return `${getSpace(lvlNest)}  + ${node.key}: ${getString(node.value, lvlNest + 1)}`;
+          return `${getSpace(lvlNest)}  + ${node.key}: ${getString(node.value, nextLvlNest)}`;
         }
         case 'delited': {
-          return `${getSpace(lvlNest)}  - ${node.key}: ${getString(node.value, lvlNest + 1)}`;
+          return `${getSpace(lvlNest)}  - ${node.key}: ${getString(node.value, nextLvlNest)}`;
         }
         case 'nested': {
-          return `${getSpace(lvlNest + 1)}${node.key}: {\n${iter(node.children, lvlNest + 1)}\n${getSpace(lvlNest + 1)}}`;
+          return `${getSpace(nextLvlNest)}${node.key}: {\n${iter(node.children, nextLvlNest)}\n${getSpace(nextLvlNest)}}`;
         }
         default: {
           throw new Error('Unknown status');
