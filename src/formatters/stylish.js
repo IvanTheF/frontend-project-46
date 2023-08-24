@@ -10,7 +10,7 @@ const getString = (data, lvlNest) => {
   return `{${str}\n${getSpace(lvlNest)}}`;
 };
 
-const getStylish = (arr) => {
+const getStylish = (tree) => {
   const iter = (data, lvlNest) => {
     const result = data.map((node) => {
       const nextLvlNest = lvlNest + 1;
@@ -38,7 +38,7 @@ const getStylish = (arr) => {
 
     return result.join('\n');
   };
-  return `{\n${iter(arr, 0)}\n}`;
+  return `{\n${iter(tree, 0)}\n}`;
 };
 
 export default getStylish;

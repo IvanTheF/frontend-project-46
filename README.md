@@ -16,3 +16,7 @@ Comparing files with nested structure in 'stylish' format:
 
 <a href="https://asciinema.org/a/2QtySODVGpBPTlcPdZRe2d181" target="_blank"><img src="https://asciinema.org/a/2QtySODVGpBPTlcPdZRe2d181.svg" /></a>
 
+Comparing files with nested structure in 'plain' format:
+
+<a href="https://asciinema.org/a/6Vu4ORvfM8BelDByUrmB0PTMe" target="_blank"><img src="https://asciinema.org/a/6Vu4ORvfM8BelDByUrmB0PTMe.svg" /></a>
+
