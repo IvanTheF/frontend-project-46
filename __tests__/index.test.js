@@ -10,7 +10,7 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => join(__dirname, '..', '__fixtures__', filename);
 const getRightAnswer = (rigtAnswerFilename) => fs.readFileSync(getFixturePath(rigtAnswerFilename), 'utf-8').trim();
 
-test('comparing json-files in stylish format', () => {
+test('Comparing JSON-files in stylish format', () => {
   const firstPath = getFixturePath('file1.json');
   const secondPath = getFixturePath('file2.json');
 
@@ -18,7 +18,7 @@ test('comparing json-files in stylish format', () => {
   expect(genDiff(firstPath, secondPath)).toEqual(getRightAnswer('rightAnswerStylish.txt'));
 });
 
-test('comparing yml-files in stylish format', () => {
+test('Comparing YML-files in stylish format', () => {
   const firstPath = getFixturePath('file1.yml');
   const secondPath = getFixturePath('file2.yml');
 
@@ -26,16 +26,30 @@ test('comparing yml-files in stylish format', () => {
   expect(genDiff(firstPath, secondPath)).toEqual(getRightAnswer('rightAnswerStylish.txt'));
 });
 
-test('comparing json-files in plain format', () => {
+test('Comparing JSON-files in plain format', () => {
   const firstPath = getFixturePath('file1.json');
   const secondPath = getFixturePath('file2.json');
 
   expect(genDiff(firstPath, secondPath, 'plain')).toEqual(getRightAnswer('rightAnswerPlain.txt'));
 });
 
-test('comparing yml-files in plain format', () => {
+test('Comparing YML-files in plain format', () => {
   const firstPath = getFixturePath('file1.yml');
   const secondPath = getFixturePath('file2.yml');
 
   expect(genDiff(firstPath, secondPath, 'plain')).toEqual(getRightAnswer('rightAnswerPlain.txt'));
+});
+
+test('Comparing JSON-files in json format', () => {
+  const firstPath = getFixturePath('file1.json');
+  const secondPath = getFixturePath('file2.json');
+
+  expect(genDiff(firstPath, secondPath, 'json')).toEqual(getRightAnswer('rightAnswerJSON.txt'));
+});
+
+test('Comparing YML-files in json format', () => {
+  const firstPath = getFixturePath('file1.yml');
+  const secondPath = getFixturePath('file2.yml');
+
+  expect(genDiff(firstPath, secondPath, 'json')).toEqual(getRightAnswer('rightAnswerJSON.txt'));
 });
