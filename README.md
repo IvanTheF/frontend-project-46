@@ -1,22 +1,41 @@
 ### Badges:
 [![Actions Status](https://github.com/IvanTheF/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/IvanTheF/frontend-project-46/actions)
-[![Test and lint](https://github.com/IvanTheF/frontend-project-46/workflows/main.yml/badge.svg)](https://github.com/IvanTheF/frontend-project-46/actions/workflows/main.yml)
+[![Test and lint](https://github.com/IvanTheF/frontend-project-46/actions/workflows/main.yml/badge.svg)](https://github.com/IvanTheF/frontend-project-46/actions/workflows/main.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f6467a189b9a93adc5fb/maintainability)](https://codeclimate.com/github/IvanTheF/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f6467a189b9a93adc5fb/test_coverage)](https://codeclimate.com/github/IvanTheF/frontend-project-46/test_coverage)
 
-Comparison of flat JSON files:
+# Difference Calculator
 
-<a href="https://asciinema.org/a/dOioQyw0wv6JkVIj6klwzJiuU" target="_blank"><img src="https://asciinema.org/a/dOioQyw0wv6JkVIj6klwzJiuU.svg" /></a>
+## _Description:_
+A difference calculator is a program that determines the difference between two data structures.
 
-Comparison of flat YAML/YML files:
+## _Utility features:_
 
-<a href="https://asciinema.org/a/lnkE2FjbnUv0lqfOt7kAT7OUl" target="_blank"><img src="https://asciinema.org/a/lnkE2FjbnUv0lqfOt7kAT7OUl.svg" /></a>
+- Support for different input formats: yaml, json
+- Report generation in the form of plain text, stylish and json
+
+## Installation
+
+Install the dependencies and devDependencies
+
+```sh
+git clone
+npm ci
+```
+
+## _Help:_
+- `gendiff -h`
+
+## _Usage demo:_
 
 Comparing files with nested structure in 'stylish' format:
-
-<a href="https://asciinema.org/a/2QtySODVGpBPTlcPdZRe2d181" target="_blank"><img src="https://asciinema.org/a/2QtySODVGpBPTlcPdZRe2d181.svg" /></a>
+default format or `-f stylish`
+<a href="https://asciinema.org/a/rqxeOSfbEBTPtgId7UdSr970h" target="_blank"><img src="https://asciinema.org/a/rqxeOSfbEBTPtgId7UdSr970h.svg" /></a>
 
 Comparing files with nested structure in 'plain' format:
+`-f plain`
+<a href="https://asciinema.org/a/1DDKpRaSmdeEGIPtFZZmSZJVw" target="_blank"><img src="https://asciinema.org/a/1DDKpRaSmdeEGIPtFZZmSZJVw.svg" /></a>
 
-<a href="https://asciinema.org/a/6Vu4ORvfM8BelDByUrmB0PTMe" target="_blank"><img src="https://asciinema.org/a/6Vu4ORvfM8BelDByUrmB0PTMe.svg" /></a>
-
+Comparing files with nested structure in 'json' format:
+`-f json`
+<a href="https://asciinema.org/a/cYiQ3Q2c761ldNbdaLQYENey5" target="_blank"><img src="https://asciinema.org/a/cYiQ3Q2c761ldNbdaLQYENey5.svg" /></a>
