@@ -1,13 +1,13 @@
 import _ from 'lodash';
 
-const getSpace = (lvlNest, replacer = ' ', spacesCount = 4) => replacer.repeat(lvlNest * spacesCount);
+const getSpace = (lvlNest, spacesCount = 4) => ' '.repeat(lvlNest * spacesCount);
 
 const getString = (data, lvlNest) => {
   if (!_.isPlainObject(data)) {
     return String(data);
   }
-  const str = Object.entries(data).map(([key, value]) => `\n${getSpace(lvlNest + 1)}${key}: ${getString(value, lvlNest + 1)}`).join(' ');
-  return `{${str}\n${getSpace(lvlNest)}}`;
+  const lines = Object.keys(data).map((key) => `${getSpace(lvlNest + 1)}${key}: ${getString(data[key], lvlNest + 1)}`);
+  return `{\n${lines.join('\n')}\n${getSpace(lvlNest)}}`;
 };
 
 const getStylish = (tree) => {
@@ -24,21 +24,21 @@ const getStylish = (tree) => {
         case 'added': {
           return `${getSpace(lvlNest)}  + ${node.key}: ${getString(node.value, nextLvlNest)}`;
         }
-        case 'delited': {
+        case 'deleted': {
           return `${getSpace(lvlNest)}  - ${node.key}: ${getString(node.value, nextLvlNest)}`;
         }
         case 'nested': {
-          return `${getSpace(nextLvlNest)}${node.key}: {\n${iter(node.children, nextLvlNest)}\n${getSpace(nextLvlNest)}}`;
+          return `${getSpace(nextLvlNest)}${node.key}: ${getString(iter(node.children, nextLvlNest), nextLvlNest)}`;
         }
         default: {
-          throw new Error('Unknown status');
+          throw new Error(`Unknown status: ${node.status}`);
         }
       }
     });
 
-    return result.join('\n');
+    return `{\n${result.join('\n')}\n${getSpace(lvlNest)}}`;
   };
-  return `{\n${iter(tree, 0)}\n}`;
+  return `${iter(tree, 0)}`;
 };
 
 export default getStylish;

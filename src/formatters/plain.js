@@ -23,7 +23,7 @@ const getPlain = (tree) => {
         case 'added': {
           return `Property '${[...path, node.key].join('.')}' was added with value: ${getValue(node.value)}`;
         }
-        case 'delited': {
+        case 'deleted': {
           return `Property '${[...path, node.key].join('.')}' was removed`;
         }
         case 'nested': {

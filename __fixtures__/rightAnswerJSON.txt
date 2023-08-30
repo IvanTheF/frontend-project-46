@@ -15,7 +15,7 @@
       },
       {
         "key": "setting2",
-        "status": "delited",
+        "status": "deleted",
         "value": 200
       },
       {
@@ -93,7 +93,7 @@
   },
   {
     "key": "group2",
-    "status": "delited",
+    "status": "deleted",
     "value": {
       "abc": 12345,
       "deep": {
