@@ -38,4 +38,4 @@ Comparing files with nested structure in 'plain' format:
 
 Comparing files with nested structure in 'json' format:
 `-f json`
-<a href="https://asciinema.org/a/cYiQ3Q2c761ldNbdaLQYENey5" target="_blank"><img src="https://asciinema.org/a/cYiQ3Q2c761ldNbdaLQYENey5.svg" /></a>
+<a href="https://asciinema.org/a/PzOSc83qAgTfqd1F33Xbe536b" target="_blank"><img src="https://asciinema.org/a/PzOSc83qAgTfqd1F33Xbe536b.svg" /></a>
