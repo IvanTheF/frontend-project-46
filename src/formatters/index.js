@@ -14,7 +14,7 @@ const formatDiff = (data, format) => {
       return getJson(data);
     }
     default: {
-      throw new Error('Unknown format!');
+      throw new Error(`Unknown format ${format}!`);
     }
   }
 };
