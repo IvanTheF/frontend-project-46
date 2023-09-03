@@ -10,35 +10,33 @@ const getString = (data, lvlNest) => {
   return `{\n${lines.join('\n')}\n${getSpace(lvlNest)}}`;
 };
 
-const getStylish = (tree) => {
-  const iter = (data, lvlNest) => {
-    const result = data.map((node) => {
-      const nextLvlNest = lvlNest + 1;
-      switch (node.status) {
-        case 'unchanged': {
-          return `${getSpace(lvlNest)}    ${node.key}: ${getString(node.value, nextLvlNest)}`;
-        }
-        case 'changed': {
-          return `${getSpace(lvlNest)}  - ${node.key}: ${getString(node.newValue, nextLvlNest)}\n${getSpace(lvlNest)}  + ${node.key}: ${getString(node.oldValue, nextLvlNest)}`;
-        }
-        case 'added': {
-          return `${getSpace(lvlNest)}  + ${node.key}: ${getString(node.value, nextLvlNest)}`;
-        }
-        case 'deleted': {
-          return `${getSpace(lvlNest)}  - ${node.key}: ${getString(node.value, nextLvlNest)}`;
-        }
-        case 'nested': {
-          return `${getSpace(nextLvlNest)}${node.key}: ${getString(iter(node.children, nextLvlNest), nextLvlNest)}`;
-        }
-        default: {
-          throw new Error(`Unknown status: ${node.status}`);
-        }
+const iter = (data, lvlNest) => {
+  const result = data.map((node) => {
+    switch (node.status) {
+      case 'unchanged': {
+        return `${getSpace(lvlNest)}    ${node.key}: ${getString(node.value, lvlNest + 1)}`;
       }
-    });
+      case 'changed': {
+        return `${getSpace(lvlNest)}  - ${node.key}: ${getString(node.newValue, lvlNest + 1)}\n${getSpace(lvlNest)}  + ${node.key}: ${getString(node.oldValue, lvlNest + 1)}`;
+      }
+      case 'added': {
+        return `${getSpace(lvlNest)}  + ${node.key}: ${getString(node.value, lvlNest + 1)}`;
+      }
+      case 'deleted': {
+        return `${getSpace(lvlNest)}  - ${node.key}: ${getString(node.value, lvlNest + 1)}`;
+      }
+      case 'nested': {
+        return `${getSpace(lvlNest + 1)}${node.key}: ${getString(iter(node.children, lvlNest + 1), lvlNest + 1)}`;
+      }
+      default: {
+        throw new Error(`Unknown status: ${node.status}`);
+      }
+    }
+  });
 
-    return `{\n${result.join('\n')}\n${getSpace(lvlNest)}}`;
-  };
-  return `${iter(tree, 0)}`;
+  return `{\n${result.join('\n')}\n${getSpace(lvlNest)}}`;
 };
+
+const getStylish = (tree) => iter(tree, 0);
 
 export default getStylish;
